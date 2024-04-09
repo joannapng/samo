@@ -13,7 +13,7 @@ def parse(filepath, platform, freq):
     # create the computation graph
     reference = Partition()
     reference.platform = platform
-    reference.freq = 200.0 if platform['name'] == "U250" else 100.0
+    reference.freq = freq
 
     model = ModelWrapper(filepath)
 
