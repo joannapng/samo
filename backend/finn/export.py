@@ -2,11 +2,9 @@ from qonnx.core.modelwrapper import ModelWrapper
 from qonnx.custom_op.registry import getCustomOp
 from qonnx.util.basic import get_by_name
 
-def export(network, model_path, output_path):
+def export(network, model):
     if len(network.partitions) > 1:
         return 
-
-    model = ModelWrapper(model_path)
 
     for finn_node in model.graph.node:
         node = finn_node.name
@@ -19,4 +17,4 @@ def export(network, model_path, output_path):
         if get_by_name(finn_node.onnx_node.attribute, "PE") is not None:
             finn_node.set_nodeattr("PE", layer.channel_out_folding)
 
-    model.save(output_path)
+    return model
