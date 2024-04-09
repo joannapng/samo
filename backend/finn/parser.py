@@ -44,6 +44,5 @@ def parse(filepath, platform, freq):
     # create network from reference design
     network = FinnNetworkWrapper(reference)
     network.batch_size = 1
-
+    
     return network
-
