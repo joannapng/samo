@@ -1,6 +1,6 @@
-from finn.core.modelwrapper import ModelWrapper
-from finn.custom_op.registry import getCustomOp
-from finn.util.basic import get_by_name
+from qonnx.core.modelwrapper import ModelWrapper
+from qonnx.custom_op.registry import getCustomOp
+from qonnx.util.basic import get_by_name
 
 def export(network, model_path, output_path):
     if len(network.partitions) > 1:

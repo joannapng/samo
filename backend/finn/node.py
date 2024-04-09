@@ -1,6 +1,6 @@
 import numpy as np
 
-from finn.util.basic import get_by_name
+from qonnx.util.basic import get_by_name
 
 from samo.model import Node
 
@@ -17,11 +17,11 @@ class FinnNodeWrapper(Node):
         self.size_out = np.prod(size_out)
 
         # set the matching folding constraint
-        self.constraints = { "matching_intra_folding" : finn_node.onnx_node.op_type not in ["StreamingFCLayer_Batch"],
-                             "matching_inter_folding": finn_node.onnx_node.op_type not in ["StreamingFCLayer_Batch", "DuplicateStreams_Batch"],
-                             "divisible_inter_folding": finn_node.onnx_node.op_type in ["StreamingFCLayer_Batch", "DuplicateStreams_Batch"],}
+        self.constraints = { "matching_intra_folding" : finn_node.onnx_node.op_type not in ["MVAU_hls", "MVAU_rtl"],
+                             "matching_inter_folding": finn_node.onnx_node.op_type not in ["MVAU_hls", "MVAU_rtl", "DuplicateStreams_hls"],
+                             "divisible_inter_folding": finn_node.onnx_node.op_type in ["MVAU_hls", "MVAU_rtl", "DuplicateStreams_hls"],}
 
-        self.split = finn_node.onnx_node.op_type in ["StreamingFCLayer_Batch", "Vector_Vector_Activate_Batch"]
+        self.split = finn_node.onnx_node.op_type in ["MVAU_hls", "MVAU_rtl", "VVAU_hls", "VVAU_rtl"]
 
     def update(self, hw_update=False):
         if hw_update:

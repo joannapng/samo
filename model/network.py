@@ -111,11 +111,9 @@ class Network:
         # copy other partition information for new partitions
         p0.platform = p.platform
         p0.freq = p.freq
-        p0.wordlength = p.wordlength
         p0.constraints = p.constraints
         p1.platform = p.platform
         p1.freq = p.freq
-        p1.wordlength = p.wordlength
         p1.constraints = p.constraints
         # check partitions aren't empty
         assert p0.nodes != None
@@ -158,7 +156,6 @@ class Network:
         self.partitions[partitions[0]].add_edge(p0.output_node, p1.input_node)
         # copy over partition information
         self.partitions[partitions[0]].freq = p0.freq
-        self.partitions[partitions[0]].wordlength = p0.wordlength
         self.partitions[partitions[0]].platform = p0.platform
         self.partitions[partitions[0]].constraints = p0.constraints
 

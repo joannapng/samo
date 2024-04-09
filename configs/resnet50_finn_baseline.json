@@ -9,7 +9,7 @@
     "channel_out_folding": 3,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_0": {
+  "MVAU_hls_0": {
     "channel_in_folding": 3,
     "channel_out_folding": 64,
     "kernel_folding": 1
@@ -34,12 +34,12 @@
     "channel_out_folding": 2,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_1": {
+  "MVAU_hls_1": {
     "channel_in_folding": 16,
     "channel_out_folding": 1,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_2": {
+  "MVAU_hls_2": {
     "channel_in_folding": 32,
     "channel_out_folding": 2,
     "kernel_folding": 1
@@ -54,12 +54,12 @@
     "channel_out_folding": 4,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_3": {
+  "MVAU_hls_3": {
     "channel_in_folding": 64,
     "channel_out_folding": 2,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_4": {
+  "MVAU_hls_4": {
     "channel_in_folding": 32,
     "channel_out_folding": 2,
     "kernel_folding": 1
@@ -89,7 +89,7 @@
     "channel_out_folding": 2,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_5": {
+  "MVAU_hls_5": {
     "channel_in_folding": 32,
     "channel_out_folding": 2,
     "kernel_folding": 1
@@ -104,12 +104,12 @@
     "channel_out_folding": 4,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_6": {
+  "MVAU_hls_6": {
     "channel_in_folding": 64,
     "channel_out_folding": 2,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_7": {
+  "MVAU_hls_7": {
     "channel_in_folding": 32,
     "channel_out_folding": 2,
     "kernel_folding": 1
@@ -139,7 +139,7 @@
     "channel_out_folding": 2,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_8": {
+  "MVAU_hls_8": {
     "channel_in_folding": 32,
     "channel_out_folding": 2,
     "kernel_folding": 1
@@ -154,12 +154,12 @@
     "channel_out_folding": 4,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_9": {
+  "MVAU_hls_9": {
     "channel_in_folding": 64,
     "channel_out_folding": 2,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_10": {
+  "MVAU_hls_10": {
     "channel_in_folding": 64,
     "channel_out_folding": 2,
     "kernel_folding": 1
@@ -184,7 +184,7 @@
     "channel_out_folding": 2,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_11": {
+  "MVAU_hls_11": {
     "channel_in_folding": 64,
     "channel_out_folding": 2,
     "kernel_folding": 1
@@ -194,7 +194,7 @@
     "channel_out_folding": 4,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_12": {
+  "MVAU_hls_12": {
     "channel_in_folding": 64,
     "channel_out_folding": 2,
     "kernel_folding": 1
@@ -209,12 +209,12 @@
     "channel_out_folding": 4,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_13": {
+  "MVAU_hls_13": {
     "channel_in_folding": 64,
     "channel_out_folding": 2,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_14": {
+  "MVAU_hls_14": {
     "channel_in_folding": 32,
     "channel_out_folding": 2,
     "kernel_folding": 1
@@ -244,7 +244,7 @@
     "channel_out_folding": 2,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_15": {
+  "MVAU_hls_15": {
     "channel_in_folding": 32,
     "channel_out_folding": 2,
     "kernel_folding": 1
@@ -259,12 +259,12 @@
     "channel_out_folding": 4,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_16": {
+  "MVAU_hls_16": {
     "channel_in_folding": 64,
     "channel_out_folding": 2,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_17": {
+  "MVAU_hls_17": {
     "channel_in_folding": 32,
     "channel_out_folding": 2,
     "kernel_folding": 1
@@ -294,7 +294,7 @@
     "channel_out_folding": 2,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_18": {
+  "MVAU_hls_18": {
     "channel_in_folding": 32,
     "channel_out_folding": 2,
     "kernel_folding": 1
@@ -309,12 +309,12 @@
     "channel_out_folding": 4,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_19": {
+  "MVAU_hls_19": {
     "channel_in_folding": 64,
     "channel_out_folding": 2,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_20": {
+  "MVAU_hls_20": {
     "channel_in_folding": 32,
     "channel_out_folding": 2,
     "kernel_folding": 1
@@ -344,7 +344,7 @@
     "channel_out_folding": 2,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_21": {
+  "MVAU_hls_21": {
     "channel_in_folding": 32,
     "channel_out_folding": 2,
     "kernel_folding": 1
@@ -359,12 +359,12 @@
     "channel_out_folding": 4,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_22": {
+  "MVAU_hls_22": {
     "channel_in_folding": 64,
     "channel_out_folding": 2,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_23": {
+  "MVAU_hls_23": {
     "channel_in_folding": 32,
     "channel_out_folding": 2,
     "kernel_folding": 1
@@ -389,7 +389,7 @@
     "channel_out_folding": 2,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_24": {
+  "MVAU_hls_24": {
     "channel_in_folding": 64,
     "channel_out_folding": 2,
     "kernel_folding": 1
@@ -399,7 +399,7 @@
     "channel_out_folding": 4,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_25": {
+  "MVAU_hls_25": {
     "channel_in_folding": 64,
     "channel_out_folding": 2,
     "kernel_folding": 1
@@ -414,12 +414,12 @@
     "channel_out_folding": 4,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_26": {
+  "MVAU_hls_26": {
     "channel_in_folding": 64,
     "channel_out_folding": 2,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_27": {
+  "MVAU_hls_27": {
     "channel_in_folding": 32,
     "channel_out_folding": 2,
     "kernel_folding": 1
@@ -449,7 +449,7 @@
     "channel_out_folding": 2,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_28": {
+  "MVAU_hls_28": {
     "channel_in_folding": 32,
     "channel_out_folding": 2,
     "kernel_folding": 1
@@ -464,12 +464,12 @@
     "channel_out_folding": 4,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_29": {
+  "MVAU_hls_29": {
     "channel_in_folding": 64,
     "channel_out_folding": 2,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_30": {
+  "MVAU_hls_30": {
     "channel_in_folding": 32,
     "channel_out_folding": 2,
     "kernel_folding": 1
@@ -499,7 +499,7 @@
     "channel_out_folding": 2,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_31": {
+  "MVAU_hls_31": {
     "channel_in_folding": 32,
     "channel_out_folding": 2,
     "kernel_folding": 1
@@ -514,12 +514,12 @@
     "channel_out_folding": 4,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_32": {
+  "MVAU_hls_32": {
     "channel_in_folding": 64,
     "channel_out_folding": 2,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_33": {
+  "MVAU_hls_33": {
     "channel_in_folding": 32,
     "channel_out_folding": 2,
     "kernel_folding": 1
@@ -549,7 +549,7 @@
     "channel_out_folding": 2,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_34": {
+  "MVAU_hls_34": {
     "channel_in_folding": 32,
     "channel_out_folding": 2,
     "kernel_folding": 1
@@ -564,12 +564,12 @@
     "channel_out_folding": 4,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_35": {
+  "MVAU_hls_35": {
     "channel_in_folding": 64,
     "channel_out_folding": 2,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_36": {
+  "MVAU_hls_36": {
     "channel_in_folding": 32,
     "channel_out_folding": 2,
     "kernel_folding": 1
@@ -599,7 +599,7 @@
     "channel_out_folding": 2,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_37": {
+  "MVAU_hls_37": {
     "channel_in_folding": 32,
     "channel_out_folding": 2,
     "kernel_folding": 1
@@ -614,12 +614,12 @@
     "channel_out_folding": 4,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_38": {
+  "MVAU_hls_38": {
     "channel_in_folding": 64,
     "channel_out_folding": 2,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_39": {
+  "MVAU_hls_39": {
     "channel_in_folding": 32,
     "channel_out_folding": 2,
     "kernel_folding": 1
@@ -649,7 +649,7 @@
     "channel_out_folding": 2,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_40": {
+  "MVAU_hls_40": {
     "channel_in_folding": 32,
     "channel_out_folding": 2,
     "kernel_folding": 1
@@ -664,12 +664,12 @@
     "channel_out_folding": 4,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_41": {
+  "MVAU_hls_41": {
     "channel_in_folding": 64,
     "channel_out_folding": 2,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_42": {
+  "MVAU_hls_42": {
     "channel_in_folding": 32,
     "channel_out_folding": 2,
     "kernel_folding": 1
@@ -699,7 +699,7 @@
     "channel_out_folding": 2,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_43": {
+  "MVAU_hls_43": {
     "channel_in_folding": 64,
     "channel_out_folding": 2,
     "kernel_folding": 1
@@ -709,7 +709,7 @@
     "channel_out_folding": 4,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_44": {
+  "MVAU_hls_44": {
     "channel_in_folding": 64,
     "channel_out_folding": 2,
     "kernel_folding": 1
@@ -724,12 +724,12 @@
     "channel_out_folding": 4,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_45": {
+  "MVAU_hls_45": {
     "channel_in_folding": 64,
     "channel_out_folding": 2,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_46": {
+  "MVAU_hls_46": {
     "channel_in_folding": 32,
     "channel_out_folding": 2,
     "kernel_folding": 1
@@ -759,7 +759,7 @@
     "channel_out_folding": 2,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_47": {
+  "MVAU_hls_47": {
     "channel_in_folding": 32,
     "channel_out_folding": 2,
     "kernel_folding": 1
@@ -774,12 +774,12 @@
     "channel_out_folding": 4,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_48": {
+  "MVAU_hls_48": {
     "channel_in_folding": 64,
     "channel_out_folding": 2,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_49": {
+  "MVAU_hls_49": {
     "channel_in_folding": 32,
     "channel_out_folding": 2,
     "kernel_folding": 1
@@ -809,7 +809,7 @@
     "channel_out_folding": 2,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_50": {
+  "MVAU_hls_50": {
     "channel_in_folding": 32,
     "channel_out_folding": 2,
     "kernel_folding": 1
@@ -824,12 +824,12 @@
     "channel_out_folding": 4,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_51": {
+  "MVAU_hls_51": {
     "channel_in_folding": 64,
     "channel_out_folding": 2,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_52": {
+  "MVAU_hls_52": {
     "channel_in_folding": 32,
     "channel_out_folding": 2,
     "kernel_folding": 1
@@ -859,7 +859,7 @@
     "channel_out_folding": 4,
     "kernel_folding": 1
   },
-  "StreamingFCLayer_Batch_53": {
+  "MVAU_hls_53": {
     "channel_in_folding": 4,
     "channel_out_folding": 1,
     "kernel_folding": 1
