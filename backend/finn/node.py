@@ -38,6 +38,6 @@ class FinnNodeWrapper(Node):
         return {
              "LUT" : self.finn_node.lut_estimation(),
              "DSP" : self.finn_node.dsp_estimation(),
-             "BRAM" : self.finn_node.bram_estimation(),
-             "FF" : 0
+             "BRAM_18K" : self.finn_node.bram_estimation(),
+             "URAM": self.finn_node.uram_estimation()
         }

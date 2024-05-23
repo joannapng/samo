@@ -83,6 +83,6 @@ class HLS4MLNodeWrapper(Node):
         return {
              "LUT" : 0,
              "DSP" : dsp_usage,
-             "BRAM" : 0,
-             "FF" : 0
+             "BRAM_18K" : 0,
+             "URAM" : 0
         }

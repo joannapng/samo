@@ -1,5 +1,7 @@
+from logging import getLogger
 import os
 import json
+from venv import logger
 
 from qonnx.core.modelwrapper import ModelWrapper
 from qonnx.custom_op.registry import getCustomOp
@@ -9,13 +11,11 @@ from samo.model import Partition
 from .network import FinnNetworkWrapper
 from .node import FinnNodeWrapper
 
-def parse(filepath, platform, freq):
+def parse(model, platform, freq):
     # create the computation graph
     reference = Partition()
     reference.platform = platform
     reference.freq = freq
-
-    model = ModelWrapper(filepath)
 
     edges = []
     ## add nodes

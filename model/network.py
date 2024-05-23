@@ -35,14 +35,13 @@ class Network:
         """
         latency of the network in microseconds
         """
-        return sum([ partition.eval_latency()/partition.freq for partition in self.partitions ]) + \
-                sum([ partition.platform["reconf_time"] for partition in self.partitions[:-1] ])
+        return sum([ partition.eval_latency() / partition.freq for partition in self.partitions])
 
     def eval_throughput(self) -> float:
         """
         throughput of the network in mega-samples per second
         """
-        return float(self.batch_size)/self.eval_latency()
+        return float(self.batch_size) / self.eval_latency()
 
     def eval_cost(self) -> float:
         """
@@ -80,7 +79,7 @@ class Network:
         print(f"Objective: {self.objective}")
         print(f"Batch Size: {self.batch_size} (img/batch)")
         print(f"Total Latency: {self.eval_latency()} (us/batch)")
-        print(f"Total Throughput: {self.eval_throughput()} (img/us)")
+        print(f"Total throughput: {self.eval_throughput() * 10**6} (fps)")
         print("\n")
 
     def split(self, partition_index, nodes):
@@ -169,4 +168,3 @@ class Network:
         for i in range(1,len(self.partitions)):
             merges.append((i-1,i))
         return merges
-

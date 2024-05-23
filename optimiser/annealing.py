@@ -18,7 +18,8 @@ class SimulatedAnnealing:
     T: float = 10.0
     k: float = 100.0
     T_min: float = 0.001
-    cool: float = 0.995
+    #cool: float = 0.995
+    cool: float = 0.75
     iterations: int = 100
     valid_variables: list = field(default_factory=lambda: ["channel_in_folding", "channel_out_folding", "kernel_folding"])
 

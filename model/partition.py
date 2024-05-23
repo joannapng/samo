@@ -7,16 +7,15 @@ import json
 
 class Partition(nx.DiGraph):
     freq: float = 100.0
-    wordlength: int = 16
+    wordlength: int = 1
     platform: dict = {
             "resources": {
-                "BRAM": 0,
+                "BRAM_18k": 0,
                 "DSP": 0,
-                "FF": 0,
+                "URAM": 0,
                 "LUT": 0
             },
             "bandwidth": 0.0,
-            "reconf_time": 0.0
         }
     constraints: dict = {"resource" : True, "inter_layer_matching" : True}
 
@@ -32,19 +31,19 @@ class Partition(nx.DiGraph):
         return max([ self.nodes[layer]["hw"].latency() for layer in self.nodes])
 
     def eval_throughput_in(self):
-        return self.nodes[self.input_node]["hw"].size_in/self.eval_latency() * \
+        return self.nodes[self.input_node]["hw"].size_in / self.eval_latency() * \
                 self.freq * self.wordlength
 
     def eval_throughput_out(self):
-        return self.nodes[self.output_node]["hw"].size_out/self.eval_latency() * \
+        return self.nodes[self.output_node]["hw"].size_out / self.eval_latency() * \
                 self.freq * self.wordlength
 
     def eval_resource(self):
         return {
             "LUT"   : sum([ self.nodes[layer]["hw"].resource()["LUT"]  for layer in self.nodes]),
             "DSP"   : sum([ self.nodes[layer]["hw"].resource()["DSP"]  for layer in self.nodes]),
-            "BRAM"  : sum([ self.nodes[layer]["hw"].resource()["BRAM"] for layer in self.nodes]),
-            "FF"    : sum([ self.nodes[layer]["hw"].resource()["FF"]   for layer in self.nodes])
+            "BRAM_18K"  : sum([ self.nodes[layer]["hw"].resource()["BRAM_18K"] for layer in self.nodes]),
+            "URAM"    : sum([ self.nodes[layer]["hw"].resource()["URAM"]   for layer in self.nodes])
         }
 
     def check_resource_constraints(self):
@@ -52,8 +51,8 @@ class Partition(nx.DiGraph):
         resource = self.eval_resource()
         # check within the platform constraints
         rsc_constraints = []
-        rsc_constraints += [resource["BRAM"] <= self.platform["resources"]["BRAM"]]
-        rsc_constraints += [resource["FF"]   <= self.platform["resources"]["FF"]]
+        rsc_constraints += [resource["BRAM_18K"] <= self.platform["resources"]["BRAM_18K"]]
+        rsc_constraints += [resource["URAM"]   <= self.platform["resources"]["URAM"]]
         rsc_constraints += [resource["LUT"]  <= self.platform["resources"]["LUT"]]
         rsc_constraints += [resource["DSP"]  <= self.platform["resources"]["DSP"]]
         # if network is within constraints, return true
@@ -61,7 +60,7 @@ class Partition(nx.DiGraph):
 
     def check_memory_bandwdith_constraint(self):
         bandwidth = (self.eval_throughput_in() + self.eval_throughput_out())
-        bandwidth_constraint = bandwidth < 1000*float(self.platform["bandwidth"])
+        bandwidth_constraint = bandwidth < float(self.platform["bandwidth"])
         logging.info(f"bandwidth {bandwidth} within constriant is {bandwidth_constraint}")
         return bandwidth_constraint
 
@@ -92,10 +91,10 @@ class Partition(nx.DiGraph):
 
     def avg_rsc_util(self):
         resource = self.eval_resource()
-        avg_rsc_utli = 0.25 * (resource["BRAM"] / self.platform["resources"]["BRAM"]) \
+        avg_rsc_utli = 0.25 * (resource["BRAM_18K"] / self.platform["resources"]["BRAM_18K"]) \
                         + 0.25 * (resource["DSP"] / self.platform["resources"]["DSP"]) \
                         + 0.25 * (resource["LUT"] / self.platform["resources"]["LUT"]) \
-                        + 0.25 * (resource["FF"] / self.platform["resources"]["FF"])
+                        + 0.25 * (resource["URAM"] / self.platform["resources"]["URAM"])
         return avg_rsc_utli
 
     def summary(self):
@@ -105,22 +104,22 @@ class Partition(nx.DiGraph):
         network_summary = tabulate([[
             int(latency),
             f"{resources['DSP']} / {self.platform['resources']['DSP']}",
-            f"{resources['BRAM']} / {self.platform['resources']['BRAM']}",
+            f"{resources['BRAM_18K']} / {self.platform['resources']['BRAM_18K']}",
             f"{resources['LUT']} / {self.platform['resources']['LUT']}",
-            f"{resources['FF']} / {self.platform['resources']['FF']}"
-        ]], headers=["Latency (cycles)", "DSP", "BRAM", "LUT", "FF"])
+            f"{resources['URAM']} / {self.platform['resources']['URAM']}"
+        ]], headers=["Latency (cycles)", "DSP", "BRAM_18K", "LUT", "URAM"])
         # get a summary for each layer
         layer_summary = []
         for node in self.nodes:
             layer = self.nodes[node]["hw"]
             layer_summary.append(
                 [ node, int(layer.latency()), layer.resource()["DSP"],
-                    layer.resource()["BRAM"], layer.resource()["LUT"], layer.resource()["FF"]] )
-        layer_summary = tabulate(layer_summary, headers=["Layer", "Latency (cycles)", "DSP", "BRAM", "LUT", "FF"])
+                    layer.resource()["BRAM_18K"], layer.resource()["LUT"], layer.resource()["URAM"]] )
+        layer_summary = tabulate(layer_summary, headers=["Layer", "Latency (cycles)", "DSP", "BRAM_18K", "LUT", "URAM"])
         bandwidth_summary = tabulate([[
             self.eval_throughput_in(),
             self.eval_throughput_out(),
-            f"{self.eval_throughput_in()+self.eval_throughput_out()}/{1000*self.platform['bandwidth']}",
+            f"{self.eval_throughput_in()+self.eval_throughput_out()}/{self.platform['bandwidth']}",
         ]], headers=["in (Mbps)", "out (Mbps)", "total (Mbps)"])
 
         # print the summary

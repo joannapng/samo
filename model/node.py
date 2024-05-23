@@ -100,19 +100,19 @@ class Node:
 
         # intra folding matching
         if self.constraints["matching_intra_folding"]:
-            logging.info("checking matching intra folding")
+            # logging.info("checking matching intra folding")
             constraints += [self.check_matching_intra_folding]
 
         # channel in folding
-        logging.info("checking input channel folding valid")
+        # logging.info("checking input channel folding valid")
         constraints += [self.channel_in_folding in self.valid_channel_in_folding]
 
         # channel out folding
-        logging.info("checking output channel folding valid")
+        # logging.info("checking output channel folding valid")
         constraints += [self.channel_out_folding in self.valid_channel_out_folding]
 
         # kernel folding
-        logging.info("checking kernel folding valid")
+        # logging.info("checking kernel folding valid")
         constraints += [self.kernel_folding in self.valid_kernel_folding]
 
         # ensure all constraints are held
@@ -128,8 +128,8 @@ class Node:
         return {
              "LUT" : 0,
              "DSP" : 0,
-             "BRAM" : 0,
-             "FF" : 0
+             "BRAM_18K" : 0,
+             "URAM" : 0
         }
 
     def reset(self):
@@ -138,4 +138,3 @@ class Node:
         self.kernel_folding = 1
 
         self.update(hw_update=True)
-

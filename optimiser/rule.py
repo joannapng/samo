@@ -85,17 +85,17 @@ class RuleBased:
                     node_hw = partition.nodes[layer]["hw"]
 
                     # update input channel folding
-                    logging.info(f"({layer}) input channel folding = {config[0]}")
+                    # logging.info(f"({layer}) input channel folding = {config[0]}")
                     node_hw.channel_in_folding = config[0]
                     partition.folding_match(layer, config[0], "io")
 
                     # update output channel folding
-                    logging.info(f"({layer}) output channel folding = {config[1]}")
+                    # logging.info(f"({layer}) output channel folding = {config[1]}")
                     node_hw.channel_out_folding = config[1]
                     partition.folding_match(layer, config[1], "io")
 
                     # update output channel folding
-                    logging.info(f"({layer}) kernel folding = {config[2]}")
+                    # logging.info(f"({layer}) kernel folding = {config[2]}")
                     node_hw.kernel_folding = config[2]
 
                     # update the network
@@ -197,12 +197,12 @@ class RuleBased:
             if not status or self.network.eval_cost() >= cost:
                 self.network.partitions = partitions
                 reject_list.append(merge_pair)
-                logging.info(f"merging {merge_pair[0]} with {merge_pair[1]} rejected")
+                # logging.info(f"merging {merge_pair[0]} with {merge_pair[1]} rejected")
             else:
                 for i, merge in enumerate(reject_list):
                     if merge[0] >= merge_pair[1]:
                         reject_list[i] = (merge[0]-1,merge[1]-1)
-                logging.info(f"merging {merge_pair[0]} with {merge_pair[1]} accepted")
+                # logging.info(f"merging {merge_pair[0]} with {merge_pair[1]} accepted")
 
     def optimise(self):
 
